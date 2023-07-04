@@ -1,0 +1,92 @@
+﻿@model OurTeamTitle1
+@{
+    ViewData["Title"] = "Create";
+}
+
+<style>
+    /* Custom button style */
+    .custom-button {
+        background-color: #007bff;
+        border-color: #007bff;
+        color: #fff;
+        transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* Custom button hover style */
+    .custom-button:hover {
+        background-color: #0069d9;
+        border-color: #0062cc;
+        color: #fff;
+    }
+
+    /* Form styling */
+    .form-label {
+        font-weight: bold;
+    }
+
+    .form-control {
+        border-radius: 5px;
+    }
+
+    .text-danger {
+        color: red;
+    }
+
+    /* Form layout */
+    .form-row {
+        margin-bottom: 15px;
+    }
+
+    .col-md-3 {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .col-md-12 {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    /* Center and right alignment */
+    .form-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        background-color: #f5f5f5;
+    }
+
+    .form-wrapper {
+        max-width: 1600px;
+        width: 100%;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin: 20px;
+    }
+</style>
+
+<script>
+    function showAlert() {
+        alert("Create button clicked!");
+    }
+</script>
+
+<div class="form-container">
+    <div class="form-wrapper">
+        <h1>Create Our Team Title1</h1>
+        <form method="post" asp-action="Create" enctype="multipart/form-data" class="row g-3">
+            <div class="col-md-3">
+                <label asp-for="Title" class="form-label">Title</label>
+                <input class="form-control" asp-for="Title" placeholder="Title">
+                <span class="text-danger" asp-validation-for="Title"></span>
+            </div>
+
+            <div class="col-12" style="margin-top: 20px;">
+                <button type="submit" class="btn btn-primary custom-button" onclick="showAlert()">Create</button>
+            </div>
+        </form>
+    </div>
+</div>
+

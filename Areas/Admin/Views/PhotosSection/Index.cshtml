@@ -1,0 +1,96 @@
+﻿@model PaginationList<PhotosSection>
+
+@{
+    int counter = (Model.Page - 1) * 3;
+}
+
+<div class="container-fluid">
+    <div class="d-flex justify-content-between">
+        <h1>Photos Section</h1>
+        <a asp-action="create" asp-controller="PhotosSection" class="btn btn-outline-info">Create</a>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Description</th>
+                    @*<th scope="col">Img</th>*@
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    counter++;
+                    <tr>
+                        <th scope="row">@counter</th>
+                        <td>@item.Title</td>
+                        <td>@item.Description</td>
+                        <td>
+                            <img style="width:150px" src="~/upload/photossection/@item.Img"></img>
+                        </td>
+                        <td>
+                            <div class="row">
+                                <a asp-controller="PhotosSection" asp-action="Update" asp-route-id="@item.Id">
+                                    <button type="button" class="mt-2 btn btn-info">
+                                        <i class="bi bi-pencil-square"></i>
+                                        Update
+                                    </button>
+                                </a>
+                            </div>
+                            <div class="row">
+                                <form asp-controller="PhotosSection" asp-action="Delete" asp-route-id="@item.Id" method="post" onsubmit="showAlert(event)">
+                                    <button type="submit" class="mt-2 btn btn-outline-danger">
+                                        <i class="bi bi-trash"></i>
+                                        Delete
+                                    </button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="d-flex justify-content-center">
+        <nav aria-label="...">
+            <ul class="pagination">
+                @if (Model.HasPrevious)
+                {
+                    <li class="page-item">
+                        <a asp-action="index" asp-controller="PhotosSection" asp-route-page="@(Model.Page-1)" class="page-link">Previous</a>
+                    </li>
+                }
+                @for (int i = 1; i <= Model.TotalPage; i++)
+                {
+                    <li class="page-item @(Model.Page == i ? "active" : "")"><a class="page-link" asp-action="index" asp-controller="PhotosSection" asp-route-page="@i">@i</a></li>
+                }
+                @if (Model.HasNext)
+                {
+                    <li class="page-item">
+                        <a asp-action="index" asp-controller="PhotosSection" asp-route-page="@(Model.Page+1)" class="page-link">Next</a>
+                    </li>
+                }
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<script>
+    function showAlert(event) {
+        event.preventDefault(); // Prevent form submission
+        var confirmation = confirm("Are you sure you want to delete?");
+        if (confirmation) {
+            // Delete action
+            alert("Delete confirmed!");
+            event.target.submit(); // Submit the form
+        } else {
+            // Cancel action
+            alert("Delete canceled!");
+        }
+    }
+</script>

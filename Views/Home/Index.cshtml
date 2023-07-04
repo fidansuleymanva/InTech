@@ -1,0 +1,833 @@
+﻿﻿
+@model HomeViewModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width, initial-scale=1.0">
+	<title>InTech</title>
+	<link rel="stylesheet" href="~/assets/css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+	<!-- Include jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Include Slick Carousel CSS -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+<!-- Include Slick Carousel JS -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+</head>
+<body>
+
+
+	</section>
+	<!-- header section -->
+	<!-- header section -->
+	<section class="header">
+		<ul class="d-flex justify-content-between px-5 pt-5">
+			<li class="nav-item">
+				<a href="#">
+					<img class="nav-link" src="~/assets/photos/Header.png" alt="" srcset="" />
+				</a>
+			</li>
+			<li class="nav-item d-flex">
+				<ul class="navbar-menu mx-5">
+					<li><a href="#about">Bizim haqqımızda</a></li>
+					<li><a href="#services">Xidmətlər</a></li>
+					<li><a href="#projects">Layihələr</a></li>
+					<li><a href="#clients">Müştərilər</a></li>
+					<li><a href="#news">Xəbərlər</a></li>
+					<li><a href="#contact">Bizimlə əlaqə saxlayın</a></li>
+				</ul>
+			</li>
+		</ul>
+		<!--Sosial Media Icons-->
+		<div class="social-icons">
+			@foreach (var item in Model.SosialMediaIcons)
+			{
+				<a href="@item.URL" class="social-icon">
+				@*<i class="fab fa-linkedin"></i>*@ @Html.Raw(item.Icon)
+			</a>
+			}
+			@*<a href="Linkİd URL" class="social-icon">
+				<i class="fab fa-linkedin"></i>
+			</a>
+			<a href="Instagram URL" class="social-icon">
+				<i class="fab fa-instagram"></i>
+			</a>
+			<a href="Inbox URL" class="social-icon">
+				<i class="fas fa-inbox"></i>
+			</a>
+			<a href="TikTok URL" class="social-icon">
+				<i class="fab fa-tiktok"></i>
+			</a>
+			<a href="Facebook URL" class="social-icon">
+				<i class="fab fa-facebook"></i>
+			</a>*@
+		</div>
+
+
+
+		<!-- CSS -->
+		<style>
+			.scroll-to-top {
+				position: fixed;
+				top: 20px;
+				left: 20px;
+				width: 40px;
+				height: 40px;
+				border: 2px solid #000;
+				border-radius: 50%;
+				background-color: #fff;
+				text-align: center;
+				line-height: 40px;
+				font-size: 20px;
+				cursor: pointer;
+				transition: background-color 0.3s;
+				z-index: 9999;
+				display: none;
+			}
+
+				.scroll-to-top:hover {
+					background-color: #ccc;
+				}
+
+			.scroll-to-bottom {
+				position: fixed;
+				bottom: 20px;
+				left: 20px;
+				width: 40px;
+				height: 40px;
+				border: 2px solid #000;
+				border-radius: 50%;
+				background-color: #fff;
+				text-align: center;
+				line-height: 40px;
+				font-size: 20px;
+				cursor: pointer;
+				transition: background-color 0.3s;
+				z-index: 9999;
+				display: none;
+			}
+
+				.scroll-to-bottom:hover {
+					background-color: #ccc;
+				}
+		</style>
+
+		<!-- HTML -->
+		<a id="scrollToTop" href="#" class="scroll-to-top"><i class="fas fa-arrow-up"></i></a>
+		<a id="scrollToBottom" href="#" class="scroll-to-bottom"><i class="fas fa-arrow-down"></i></a>
+
+		<!-- JavaScript -->
+		<script>
+			// Yukarı kaydırma işlemi
+			document.getElementById("scrollToTop").addEventListener("click", function(event) {
+				event.preventDefault();
+				window.scrollTo({ top: 0, behavior: 'smooth' });
+			});
+
+			// Aşağı kaydırma işlemi
+			document.getElementById("scrollToBottom").addEventListener("click", function(event) {
+				event.preventDefault();
+				window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });
+			});
+
+			// Yukarı ve aşağı kaydırma durumunu kontrol etme
+			window.addEventListener("scroll", function() {
+				var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+				var scrollToTop = document.getElementById("scrollToTop");
+				var scrollToBottom = document.getElementById("scrollToBottom");
+
+				// Yukarı kaydırma durumu
+				if (scrollPosition > 200) {
+					scrollToTop.style.display = "block";
+				} else {
+					scrollToTop.style.display = "none";
+				}
+
+				// Aşağı kaydırma durumu
+				if (scrollPosition < (document.documentElement.scrollHeight - window.innerHeight - 200)) {
+					scrollToBottom.style.display = "block";
+				} else {
+					scrollToBottom.style.display = "none";
+				}
+
+				// Sayfanın olduğu hisseye göre konumlandırma
+				var pageLeft = 20; // Sol kenar boşluğu
+				var pageCenter = window.innerHeight / 2;
+
+				if (scrollPosition > pageCenter) {
+					scrollToTop.style.top = pageLeft + "px";
+					scrollToBottom.style.bottom = pageLeft + "px";
+				} else {
+					scrollToTop.style.top = "-100px";
+					scrollToBottom.style.bottom = "-100px";
+				}
+			});
+		</script>
+	</section>
+
+	<!-- Content sections -->
+	<section id="about">
+		<!-- About Us content goes here -->
+		<!-- card section -->
+		<section class="course">
+			<div class="row">
+				@foreach (var item in Model.CardSections)
+				{
+					<div class="course-col">
+						<div class="shekil">
+							<img src="~/upload/cardsections/@item.Img" alt="" srcset="">
+						</div>
+						<h3>@item.Title1</h3>
+						<p>@item.Description</p>
+					</div>
+				}
+			</div>
+		</section>
+
+		<!--Services Section-->
+	</section>
+	<section id="services">
+		<section class="campus">
+			@foreach (var item in Model.ServicesSectionTitles)
+			{
+				<h1 class="services-heading" style="margin-top:20px">@item.Title</h1>
+			<p>@item.Description</p>
+
+			}
+			
+			<div>
+				<div class="carousel">
+					<ul class="slides">
+						@for (var i = 0; i < Model.ServicesSections.Count; i++)
+						{
+							var currentItem = Model.ServicesSections[i];
+							var previousItem = i == 0 ? Model.ServicesSections.Last() : Model.ServicesSections[i - 1];
+							var nextItem = i == Model.ServicesSections.Count - 1 ? Model.ServicesSections.First() : Model.ServicesSections[i + 1];
+
+							<input type="radio" name="radio-buttons" id="@($"img-{currentItem.Id}")" @(i == 0 ? "checked" : "") />
+							<li class="slide-container">
+								<div class="slide-image">
+									<div class="triangle"></div>
+									<img src="~/upload/servicessection/@currentItem.Img" />
+								</div>
+								<div class="carousel-controls">
+									<label for="@($"img-{previousItem.Id}")" class="prev-slide">
+										<span>&lsaquo;</span>
+									</label>
+									<label for="@($"img-{nextItem.Id}")" class="next-slide">
+										<span>&rsaquo;</span>
+									</label>
+								</div>
+							</li>
+						}
+						<div class="carousel-dots">
+							@foreach (var item in Model.ServicesSections)
+							{
+								<label for="@($"img-{item.Id}")" class="carousel-dot" id="@($"img-dot-{item.Id}")"></label>
+							}
+						</div>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<!-- JavaScript -->
+		<script>
+			// Services hissesine tıklama işlemini dinle
+			var servicesSection = document.querySelector(".campus");
+
+			servicesSection.addEventListener("click", function (event) {
+				// Sadece "Services" hissesine tıklanıldığında altında bir şey yap
+				if (event.target.tagName === "H1" && event.target.innerText === "Xidmətlərimiz") {
+					// Burada yapmak istediğiniz işlemi gerçekleştirin
+					// Örneğin, altında başka bir bölümü görünür veya gizli hale getirebilirsiniz
+				}
+			});
+
+		</script>
+	</section>
+
+	<!--Projects-->
+	<section id="projects">
+		<!-- Projects content goes here -->
+		<!--Portfolio-->
+		<div class="portfolio">
+			<div style="display: flex; align-items: center; margin-left: 85px;">
+					<div style="width: 6px; height: 40px; background-color: darkblue; margin-right: 10px; "></div>
+					@foreach (var item in Model.ProjectTitle1s)
+					{
+						<h4 style="color: white;margin-top:20px">@item.Title</h4>
+					}
+					
+				</div>
+			@foreach (var item in Model.PhotosSections)
+			{
+			    <h1 style="color: white; margin-left: 85px;">@item.Title</h1>
+				<p style="color: white; margin-left: 85px;">
+					@item.Description
+				</p>
+
+				@*<img src="~/upload/photossection/@item.Img" alt="" srcset="">*@
+				
+			}
+			<div class="shekiller">
+
+  <img class="photo8" src="~/assets/photos/image 8.png" alt="">
+  <img class="photo9" src="~/assets/photos/image 9.png" alt="" srcset="">
+  <img class="photo10" src="~/assets/photos/image 10.png" alt="" srcset="">
+  <img class="photo11" src="~/assets/photos/image 11.png" alt="" srcset="">
+  <img class="photo13" src="~/assets/photos/image 16.png" alt="" srcset="">
+  <img class="photo14" src="~/assets/photos/image 15 (1).png" alt="" srcset="">
+</div>
+
+		</div>
+		</main>
+		<style>
+			.projects-heading {
+				text-align: left;
+			}
+
+				.projects-heading h1 {
+					color: white;
+					font-weight: bold;
+				}
+
+				.projects-heading p {
+					color: #0f9d58;
+				}
+				.projects-heading h1 {
+				color: white;
+				font-weight: bold;
+				margin-left: 85px
+			}
+
+		</style>
+	</section>
+
+	<!--Clients-->
+	<section id="clients">
+		<!--Testimonials-->
+		<section class="testimonials">
+			@*  <div class="testimonials-content">*@
+			@*<div class="testimonials-heading" style="background-color: aquare;">*@
+			<div style="display: flex; align-items: center;">
+				<div style="width: 10px; height: 40px; background-color: darkblue; margin-right: 10px;"></div>
+				@foreach (var item in Model.ClientsTitle1s)
+				{
+					<h4 style="color: white;margin-top:20px">@item.Title</h4>
+				}
+				
+			</div>
+			@foreach (var item in Model.ClientsTitle2s)
+			{
+				<h1 @*style="color: white;"*@>@item.Title</h1>
+			<p@* style="color: #0f9d58;"*@>
+				@item.Description</p>
+			}
+			
+				</div>
+				<div class="row">
+	
+			@foreach (var item in Model.ClientsMembers1cs)
+			{
+				<div class="testimonials-col">
+		<div class="testimonial-info">
+			<div class="testimonial-divider" style="background-color: #0f9d58;"></div>
+				<img src="~/upload/clientsmember/@item.Img" />
+				<p>
+					@item.Description
+				</p>
+				<h3>@item.Fullname</h3>
+				<div class="star-rating">
+					<input type="radio" id="rating1-star5" name="rating1" value="5" />
+					<label for="rating1-star5" class="star">&#9733;</label>
+					<input type="radio" id="rating1-star4" name="rating1" value="4" />
+					<label for="rating1-star4" class="star">&#9733;</label>
+					<input type="radio" id="rating1-star3" name="rating1" value="3" />
+					<label for="rating1-star3" class="star">&#9733;</label>
+					<input type="radio" id="rating1-star2" name="rating1" value="2" />
+					<label for="rating1-star2" class="star">&#9733;</label>
+					<input type="radio" id="rating1-star1" name="rating1" value="1" />
+					<label for="rating1-star1" class="star">&#9733;</label>
+				</div>
+				</div>
+	</div>
+
+			}
+			</div>
+		
+
+					@*<div class="testimonials-col">
+						<div class="testimonial-info">
+							<div class="testimonial-divider" style="background-color: #0f9d58;"></div>
+							<img src="~/assets/photos/Ellipse%2035%20(1).png" />
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+								ipsam similique laudantium! Labore quidem eos necessitatibus
+								beatae aliquam non, dolore aperiam doloribus quae mollitia!
+								Officiis, veritatis?
+							</p>
+							<h3>Yusif Əliyev</h3>
+							<div class="star-rating">
+								<input type="radio" id="rating2-star5" name="rating2" value="5" />
+								<label for="rating2-star5" class="star">&#9733;</label>
+								<input type="radio" id="rating2-star4" name="rating2" value="4" />
+								<label for="rating2-star4" class="star">&#9733;</label>
+								<input type="radio" id="rating2-star3" name="rating2" value="3" />
+								<label for="rating2-star3" class="star">&#9733;</label>
+								<input type="radio" id="rating2-star2" name="rating2" value="2" />
+								<label for="rating2-star2" class="star">&#9733;</label>
+								<input type="radio" id="rating2-star1" name="rating2" value="1" />
+								<label for="rating2-star1" class="star">&#9733;</label>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>*@
+		</section>
+	</section>
+
+	<style>
+		.testimonials-heading {
+			text-align: left;
+		}
+
+			.testimonials-heading h1 {
+				color: white;
+				font-weight: bold;
+			}
+
+			.testimonials-heading p {
+				color: #0f9d58;
+			}
+
+		.testimonial-info {
+			margin-left: 20px;
+			border-radius: 10px;
+		}
+
+		.star-rating {
+			margin-bottom: 10px;
+		}
+
+			.star-rating input[type="radio"] {
+				display: none;
+			}
+
+			.star-rating label.star {
+				font-size: 20px;
+				color: #ffc107;
+				transition: all 0.2s ease-in-out;
+				cursor: pointer;
+			}
+
+			.star-rating input[type="radio"]:checked ~ label.star:before {
+				content: "\f005";
+				font-family: "FontAwesome";
+			}
+
+		.save-button {
+			background-color: #4CAF50;
+			color: white;
+			border: none;
+			padding: 10px 20px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			transition-duration: 0.4s;
+			cursor: pointer;
+			border-radius: 4px;
+		}
+
+			.save-button:hover {
+				background-color: #45a049;
+			}
+
+		.testimonial-divider {
+			height: 3px;
+			width: 100px;
+			margin-bottom: 10px;
+		}
+	</style>
+
+	<!--News-->
+	<section id="news">
+		<!-- photos2 -->
+		<section class="photos2">
+			<!-- News content goes here -->
+			@*@foreach (var item in Model.Photos2Sections)
+				{
+				<section class="photos2">
+				<img src="~/upload/photo2section/@item.Img">
+				</section>
+				}*@
+			<div style="display: flex; align-items: center; margin-left: 85px;">
+				<div style="width: 6px; height: 40px; background-color: darkblue; margin-right: 10px;"></div>
+				@foreach (var item in Model.Photos2Title1s)
+				{
+					<h4 style="color: white;margin-top:20px">@item.Title</h4>
+				}
+				
+			</div>
+			@foreach (var item in Model.Photos2Title2s)
+			{
+				<h1 style="color: white; margin-left: 85px;">@item.Title</h1>
+			<p style="color: white; margin-left: 85px;">
+				@item.Description
+			</p>
+			}
+			
+
+			@*<div style="margin-left: 20px;">
+				@foreach (var item in Model.Photos2Sections)
+				{
+					<div class="photos2">
+						<img src="~/upload/photo2section/@item.Img">
+					</div>
+				}
+			</div>*@
+			 <div class="umumihs">
+  <img class="photo17" src="~/assets/photos/image 14 (1).png" alt="" srcset="">
+
+  <div class="c1">
+  <img class="photo15" src="~/assets/photos/image 16.png" alt="" srcset="">
+  <img class="photo16" src="~/assets/photos/image 15 (1).png" alt="" srcset=""></div>
+</div>
+			@foreach (var item in Model.SeeMoreLinks)
+			{
+				<section class="see-more">
+        <a href="@item.URL">SEE MORE</a>
+    </section>
+				
+			}
+			 
+
+		</section>
+
+		<style>
+			.photos2-heading {
+				text-align: left;
+			}
+
+				.photos2-heading h1 {
+					color: white;
+					font-weight: bold;
+				}
+
+				.photos2-heading p {
+					color: #0f9d58;
+				}
+
+			#news {
+				position: relative;
+			}
+
+			.see-more {
+        position: absolute;
+		bottom: 100px; /* Aşağı hizalama değeri */
+        top: 20px; /* Yukarı hizalama değeri */
+        right: 50px; /* Sağa hizalama değeri */
+        transform: translateX(-50%);
+    }
+
+    .see-more a {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: transparent;
+        color: white;
+        text-decoration: none;
+        transition: background-color 0.3s;
+        border-radius: 20px;
+        border: 2px solid white;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .see-more a:hover {
+        background-color: rgba(0, 255, 255, 0.5);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+		</style>
+	</section>
+	<!--Contact-->
+<section id="contact">
+    <!--Our Team-->
+    <section class="radioss">
+       <div style="display: flex; align-items: center; margin-left: 85px;">
+		<div style="width: 6px; height: 40px; background-color: darkblue; margin-right: 10px;"></div>
+			@foreach (var item in Model.OurTeamTitle1s)
+			{
+				
+                 <h4 style="color: white; margin-top:20px">@item.Title</h4>
+			     
+			}
+		</div>
+            
+		@foreach (var item in Model.OurTeamTitle2s)
+		{
+			 <h1 style="color: white; margin-left: 85px;">@item.Title</h1>
+        <p style="color: white; margin-left: 85px;">
+            @item.Description
+        </p>
+		}
+       
+		<!--Our Team Member-->
+  
+       <section id="team">
+    <div class="team-carousel">
+        @foreach (var item in Model.OurTeamMembers)
+        {
+            <div class="team-member">
+                <div class="member-card">
+                    <div class="member-avatar">
+                        <img src="~/upload/ourteammember/@item.Img" alt="Avatar">
+                    </div>
+                    <div class="member-details">
+                        <h4 class="member-name">@item.Fullname</h4>
+                        <h5 class="member-role">@item.Profession</h5>
+                        <p>@item.About</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="carousel-arrows">
+        <div class="carousel-arrow prev">&#8249;</div>
+        <div class="carousel-arrow next">&#8250;</div>
+    </div>
+</section>
+
+
+        <style>
+         #team {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  .team-carousel {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+}
+
+.team-member {
+    flex: 0 0 100%;
+    transition: transform 0.5s;
+}
+
+.team-carousel:hover .team-member {
+    transform: translateX(-100%);
+}
+
+  .team-member {
+    flex: 0 0 auto;
+    width: 350px; /* Takım üyelerinin ölçüsünü isteğinize göre ayarlayın */
+    scroll-snap-align: start;
+  }
+
+  .member-card {
+    width: 80%;
+    height: 80%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+  }
+
+  .member-avatar {
+    width: 100%;
+    height: 50%;
+    padding-bottom: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+
+  .member-avatar img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .member-details {
+    margin-top: 20px;
+  }
+
+  .member-name {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .member-role {
+    font-size: 16px;
+    color: #777;
+  }
+  .member-name, .member-role {
+    color: aqua;
+  }
+  .team-member:not(:last-child) {
+    margin-right: 20px;
+}
+
+.carousel-arrows {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.carousel-arrow {
+    width: 30px;
+    height: 30px;
+    background-color: #000;
+    color: #fff;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.carousel-arrow:hover {
+    background-color: #333;
+}
+.carousel-container {
+        display: flex;
+        transition: transform 0.5s;
+    }
+.team-carousel {
+    display: flex;
+    overflow-x: auto;
+    width: 100%;
+    scroll-behavior: smooth; /* Yumuşak kaydırma için */
+}
+
+.team-carousel::-webkit-scrollbar {
+    display: none; /* Kaydırma çubuğunu gizle */
+}
+
+.team-member {
+    flex: 0 0 auto;
+    margin-right: 20px; /* Üyeler arasındaki boşluğu isteğe bağlı olarak ayarlayın */
+}
+ .team-carousel {
+                display: flex;
+                overflow-x: auto;
+                width: 100%;
+                scroll-behavior: smooth;
+            }
+
+            .team-carousel::-webkit-scrollbar {
+                display: none;
+            }
+
+            .team-member {
+                flex: 0 0 auto;
+                margin-right: 20px;
+            }
+
+            /* Ek stil: Slick Carousel'ın tıklanabilirliğini etkinleştirme */
+            .team-member:focus {
+                outline: none;
+            }
+        </style>
+		<script src="slick.min.js"></script>
+<script>
+    // JavaScript to initialize Slick Carousel
+    document.addEventListener("DOMContentLoaded", function() {
+        $('.team-carousel').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            infinite: true,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            prevArrow: '<div class="slick-prev">&#8249;</div>',
+            nextArrow: '<div class="slick-next">&#8250;</div>',
+            focusOnSelect: true, // Tıklanabilirlik için eklenen özellik
+            centerMode: true, // Tıklanabilirlik için eklenen özellik
+            centerPadding: '0px' // Tıklanabilirlik için eklenen özellik
+        });
+    });
+</script>
+    </section>
+
+</section>
+
+
+
+		<!--Header Section-->
+		<div class="text-box">
+
+			@foreach (var item in Model.HeaderSections)
+			{
+				<p>
+					@item.Description
+				</p>
+				<a href="@item.URL" class="hero-btn">@item.Title</a>
+			}
+
+		</div>
+	</section>
+
+	</section>
+	<footer>
+  <div class="footer-content">
+    <p>&copy; 2023 Designed By InTech / All Rights Reserved</p>
+    <nav>
+      <ul>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Cookie Policy</a></li>
+      </ul>
+    </nav>
+  </div>
+  <style>
+	  
+	  footer {
+  background-color: #212529;
+  padding: 3px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-content p {
+  margin: 0;
+  color: #fff; /* Beyaz metin rengi */
+}
+
+.footer-content nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-content nav ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.footer-content nav ul li a {
+  color: #fff; /* Beyaz metin rengi */
+  text-decoration: none;
+}
+
+  </style>
+</footer>
+
+	<script src="~/assets/js/script.js">  </script>
+</body>
+</html>

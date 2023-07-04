@@ -1,0 +1,1023 @@
+﻿*{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+/* header website */
+
+.justify-content-end{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+
+
+.logo{
+    margin-top: 67px;
+}
+
+.line{
+margin-top: 67px;
+}
+
+.header {
+    background: #000;
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), 
+        url('..//photos/website background.png');
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+  
+.text-box {
+    width: 90%;
+    color: #fff;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  .text-box h1 {
+    font-size: 62px;
+  }
+  
+  .text-box p {
+    margin: 10px 0 40px;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .hero-btn {
+    margin-top: 10px;
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 12px 45px;
+    font-size: 20px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    border-radius: 38px;
+  }
+  
+  .hero-btn:hover {
+    border: 2px solid #000;
+    background: #626275;
+    color: #ffffff;
+    transition: 1s;
+  }
+
+  li{
+    list-style-type: none;
+  }
+  /* --navbar menu-------------------------------------- */
+  .navbar-menu{
+    color: #fff;
+    list-style-type: none;
+    display: none;
+  }
+  .navbar-menu li{
+    margin: 1rem;
+  }
+  
+  .open{
+    display: flex;
+  }
+
+ .nav-link{
+width: 200px;
+ }
+
+ .nav-link1{
+  width: 70px;
+ }
+
+  /* card section */
+
+  .course {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+    padding: 150px;
+    line-height: 72px;
+    size: 48px;
+    background: #010204;
+    row-gap: 25px;
+    
+   
+  }
+
+  .shekil{
+    display: flex;
+    justify-content: flex-start;
+    text-align: start;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .shekil1{
+    display: flex;
+    justify-content: flex-start;
+    text-align: start;
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+  .shekil2{
+    display: flex;
+    justify-content: flex-start;
+    text-align: start;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+ h3{
+  color: #fff;
+  text-align: start;
+  font-weight: 600;
+  margin: 10px 0;
+  font-size: 40px;
+  
+ }
+  
+  p {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding-top: 10px;
+    text-align: start;
+  }
+  
+  .row {
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .course-col {
+    flex-basis: 31%;
+    background: #031730;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    transition: all 0.1s 1s;
+    transition: transform 1s
+    
+  }
+  
+  
+  
+    .course-col:hover{ background-image: linear-gradient(180deg, #0819B5, #07D2FB, #0D0A2C);
+      transition: 1s;
+      transform: scale(1.1);
+     
+    }
+  
+
+
+  @media (max-width: 700px) {
+    .row {
+      flex-direction: column;
+    }
+  }
+
+  .navbar {
+    background-color: #f1f1f1;
+    padding: 10px;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .nav-item {
+    padding: 5px;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+  }
+  
+  .nav-link img {
+    width: 20px;
+  }
+  
+  .nav-link:hover {
+    opacity: 0.8;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .nav-link.active {
+    font-weight: bold;
+  }
+  
+  
+  /* xidmet */
+
+
+   .campus {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px;
+    background: rgba(1, 9, 18, 1);
+    
+  }
+
+  .carousel {
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+ul.slides {
+    display: block;
+    position: relative;
+    height: 600px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    list-style: none;
+}
+
+.slides * {
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+ul.slides input {
+    display: none; 
+}
+
+
+.slide-container { 
+    display: flex;
+    justify-content: center; 
+    text-align: center;
+}
+
+.slide-image {
+    display: block;
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    top: 0;
+    opacity: 0;
+    transition: all .7s ease-in-out;
+
+}   
+
+.slide-image img {
+    width: auto;
+    min-width: 100%;
+    height: 100%;
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    font-size: 100px;
+    line-height: 600px;
+    color: #fff;
+}
+
+.carousel-controls label {
+    display: none;
+    position: absolute;
+    padding: 0 20px;
+    opacity: 0;
+    transition: opacity .2s;
+    cursor: pointer;
+}
+
+.slide-image:hover + .carousel-controls label{
+    opacity: 0.5;
+}
+
+.carousel-controls label:hover {
+    opacity: 1;
+}
+
+.carousel-controls .prev-slide {
+    width: 49%;
+    text-align: left;
+    left: 0;
+}
+
+.carousel-controls .next-slide {
+    width: 49%;
+    text-align: right;
+    right: 0;
+}
+
+.carousel-dots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    z-index: 999;
+    text-align: center;
+}
+
+.carousel-dots .carousel-dot {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.5;
+    margin: 10px;
+}
+
+input:checked + .slide-container .slide-image {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 1s ease-in-out;
+}
+
+input:checked + .slide-container .carousel-controls label {
+     display: block; 
+}
+
+input#img-1:checked ~ .carousel-dots label#img-dot-1,
+input#img-2:checked ~ .carousel-dots label#img-dot-2,
+input#img-3:checked ~ .carousel-dots label#img-dot-3,
+input#img-4:checked ~ .carousel-dots label#img-dot-4,
+input#img-5:checked ~ .carousel-dots label#img-dot-5,
+input#img-6:checked ~ .carousel-dots label#img-dot-6 {
+	opacity: 1;
+}
+
+
+input:checked + .slide-container .nav label { display: block; }
+
+
+  
+
+   
+  
+
+/* portfolio */
+
+.portfolio{
+
+background: #010204;
+  text-align: center;
+}
+.portfolio img{
+    
+  height: 1080px;
+  width: 1185px;
+  margin-right: 160px;
+  margin-top: 160px;
+  
+}
+
+/* qrup */
+
+
+.testimonials {
+  width: 100%;
+  margin: auto;
+  padding-top: 100px;
+  padding-right: 100px;
+  padding-left: 100px;
+  text-align: center;
+background: #050313;
+}
+
+.testimonials-col {
+ 
+  flex-basis: 44%;
+  border-radius: 10px;
+  margin-bottom: 5%;
+  text-align: left;
+  background: #031730;
+  padding: 25px;
+  cursor: pointer;
+  display: flex;
+}
+
+.testimonials-col:hover{
+  background-image: linear-gradient(-18deg, #FFFFFF, #07D2FB, #0819B5);
+  transition: 1s;
+  transform: scale(1.1);
+ 
+}
+
+.testimonials-col img {
+  height: 40px;
+  margin-left: 5px;
+  margin-right: 30px;
+  border-radius: 50%;
+}
+
+.testimonials-col p {
+  padding: 0;
+}
+
+.testimonials-col h3 {
+  margin-top: 15px;
+  text-align: left;
+}
+
+.testimonials-col i {
+  color: #fff;
+}
+
+@media (max-width: 700px) {
+  .testimonials-col img {
+    margin-left: 0px;
+    margin-right: 15px;
+  }
+}
+.testimonials {
+  width: 100%;
+  margin: auto;
+  padding-top: 100px;
+  padding-right: 100px;
+  padding-left: 100px;
+  text-align: center;
+background: #050313;
+}
+
+.testimonials-col {
+ 
+  flex-basis: 44%;
+  border-radius: 10px;
+  margin-bottom: 5%;
+  text-align: left;
+  background: #031730;
+  padding: 25px;
+  cursor: pointer;
+  display: flex;
+}
+
+.testimonials-col:hover{
+  background-image: linear-gradient(-18deg, #FFFFFF, #07D2FB, #0819B5);
+  transition: 1s;
+  transform: scale(1.1);
+ 
+}
+
+.testimonials-col img {
+  height: 40px;
+  margin-left: 5px;
+  margin-right: 30px;
+  border-radius: 50%;
+}
+
+.testimonials-col p {
+  padding: 0;
+}
+
+.testimonials-col h3 {
+  margin-top: 15px;
+  text-align: left;
+}
+
+.testimonials-col i {
+  color: #fff;
+}
+
+@media (max-width: 700px) {
+  .testimonials-col img {
+    margin-left: 0px;
+    margin-right: 15px;
+  }
+}
+
+
+/* photos2 */
+
+.photos2{
+  background: #000;
+  width: 100%;
+}
+
+.photos2 img{
+  height: 400px;
+  width:1185px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  padding-left: 160px;
+}
+
+/* radios */
+
+.elit2 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.radioss {
+    background: #000510;
+}
+
+.radionucevir {
+    text-align: center;
+    margin: 10px;
+    font-size: large;
+}
+
+main#carousel {
+    grid-row: 1 / 2;
+    grid-column: 1 / 8;
+    width: 100vw;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    perspective: 300px;
+    --items: 5;
+    --middle: 3;
+    --position: 1;
+    pointer-events: none;
+}
+
+div.item {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background-color: coral;
+    --r: calc(var(--position) - var(--offset));
+    --abs: max(calc(var(--r) * -1), var(--r));
+    transition: all 0.25s linear;
+    transform: rotateY(calc(-10deg * var(--r))) translateX(calc(-300px * var(--r)));
+    z-index: calc((var(--position) - var(--abs)));
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+    div.item:nth-of-type(1) {
+        --offset: 1;
+        background-color: #020f1e;
+    }
+
+    div.item:nth-of-type(2) {
+        --offset: 2;
+        background-color: #020f1e;
+    }
+
+    div.item:nth-of-type(3) {
+        --offset: 3;
+        background-color: #020f1e;
+    }
+
+    div.item:nth-of-type(4) {
+        --offset: 4;
+        background-color: #020f1e;
+    }
+
+    div.item:nth-of-type(5) {
+        --offset: 5;
+        background-color: #020f1e;
+    }
+
+input:nth-of-type(1) {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+    input:nth-of-type(1):checked ~ main#carousel {
+        --position: 1;
+    }
+
+input:nth-of-type(2) {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+}
+
+    input:nth-of-type(2):checked ~ main#carousel {
+        --position: 2;
+    }
+
+input:nth-of-type(3) {
+    grid-column: 4 /5;
+    grid-row: 2 / 3;
+}
+
+    input:nth-of-type(3):checked ~ main#carousel {
+        --position: 3;
+    }
+
+input:nth-of-type(4) {
+    grid-column: 5 / 6;
+    grid-row: 2 / 3;
+}
+
+    input:nth-of-type(4):checked ~ main#carousel {
+        --position: 4;
+    }
+
+input:nth-of-type(5) {
+    grid-column: 6 / 7;
+    grid-row: 2 / 3;
+}
+
+    input:nth-of-type(5):checked ~ main#carousel {
+        --position: 5;
+    }
+
+/* radios card */
+
+.cardi {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+    /* On mouse-over, add a deeper shadow */
+    .cardi:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+
+/* Add some padding inside the card container */
+.containeri {
+    margin-top: -80px;
+    padding-left: 10px;
+    color: white;
+}
+
+/* basliqlar */
+
+.xidmetlerimiz {
+    color: #ffffff;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.contrary {
+    color: #FFFFFF;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.elit {
+    color: #ffffff;
+    padding-bottom: 50px;
+}
+
+.xidmetlerimiz1 {
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.contrary1 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.elit1 {
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+img {
+    padding-bottom: 100px;
+}
+
+.stars {
+    display: inline-block;
+    position: relative;
+    width: 150px;
+    height: 30px;
+}
+
+    .stars input {
+        display: none;
+    }
+
+    .stars label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 30px;
+        width: 30px;
+        margin: 0;
+        padding: 0;
+        cursor: pointer;
+        background-image: url('path/to/star.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .stars input:checked ~ label,
+    .stars input:checked ~ label ~ label {
+        background-image: url('path/to/filled-star.png');
+    }
+
+/*Sosial Media*/
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    margin-top: 300px; /* İstenilen mesafeyi belirleyebilirsiniz */
+}
+
+.social-icon {
+    margin-top: 20px;
+}
+
+    .social-icon i {
+        color: #fff;
+        font-size: 24px;
+        transition: color 0.3s ease;
+    }
+
+    .social-icon:hover i {
+        color: #3498db;
+    }
+
+
+
+.header {
+    background-color: #fff;
+    padding: 20px;
+}
+
+.navbar-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+    .navbar-menu li {
+        margin-right: 15px;
+    }
+
+        .navbar-menu li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+            .navbar-menu li a:hover {
+                color: #3498db;
+            }
+
+
+.services-heading {
+    position: relative;
+}
+
+    .services-heading::before {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: 0;
+        width: 5%;
+        height: 2px;
+        background-color: darkblue;
+    }
+
+.services-heading {
+    text-align: left;
+    margin-left: 30px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.campus p {
+    text-align: left;
+    margin-left: 30px;
+    color: #fff;
+}
+
+
+/*Clients*/
+.clients-heading {
+    position: relative;
+}
+
+    .clients-heading::before {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: 0;
+        width: 5%;
+        height: 2px;
+        background-color: aqua;
+    }
+
+.clients-heading {
+    text-align: left;
+    margin-left: 30px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.testimonials {
+    text-align: left;
+    margin-left: 0px;
+    color: #fff;
+}
+
+.rectangle {
+  width: 10px;
+  height: 40px;
+  background-color: aqua;
+  margin-right: 10px;
+}
+
+
+/**/
+.carousel-controls label {
+    font-size: 20px;
+    color: blue;
+}
+
+.carousel-dots .carousel-dot {
+    background-color: blue;
+}
+
+.carousel-controls span {
+    display: none;
+}
+
+.carousel-controls .prev-slide::before {
+    content: '\2039';
+    display: inline-block;
+}
+
+.carousel-controls .next-slide::before {
+    content: '\203A';
+    display: inline-block;
+}
+
+
+
+/*Carousel button*/
+.carousel-dots {
+    text-align: right;
+    margin-top: -10px;
+}
+
+.carousel-dot {
+    width: 6px;
+    height: 6px;
+    margin: 0 2px;
+    background-color: #000;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+
+
+
+/* shekil bolumu */
+
+.shekiller {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.photo8 {
+    height: 90px;
+    width: 90px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.photo9 {
+    height: 90px;
+    width: 90px;
+    margin-top: 20px;
+}
+
+.photo10 {
+    height: 90px;
+    width: 90px;
+    margin-top: -190px;
+    margin-left: 100px;
+}
+
+.photo11 {
+    height: 600px;
+    width: 500px;
+    margin-top: -3px;
+    margin-bottom: -200px;
+}
+
+.photo13 {
+    height: 500px;
+    width: 500px;
+    margin-top: -380px;
+    margin-left: 100px;
+    margin-bottom: -200px;
+}
+
+.photo14 {
+    height: 300px;
+    width: 500px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .shekiller {
+        justify-content: flex-start;
+    }
+
+    .photo8,
+    .photo9,
+    .photo10,
+    .photo11,
+    .photo13,
+    .photo14 {
+        margin: 0;
+        width: 30%;
+        max-width: 50px;
+        height: auto;
+    }
+}
+
+.umumihs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 10px;
+    row-gap: 1em;
+}
+
+.photo16 {
+    margin-top: -90px;
+    width: 90px;
+    height: 90px;
+}
+
+.photo17 {
+    width: 90px;
+    height: 90px;
+}
+
+.photo15 {
+    width: 90px;
+    height: 90px;
+}
+
+
+/* radios card */
+
+/*.cardi {*/
+    /* Add shadows to create the "card" effect */
+    /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 100%;*/ /* Kartın genişliği */
+    /*height: 100%;*/ /* Kartın yüksekliği */
+/*}*/
+
+    /* On mouse-over, add a deeper shadow */
+    /*.cardi:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    }*/
+
+/* Add some padding inside the card container */
+/*.containeri {
+    padding: 10px;
+    color: white;
+}*/
+
+
+
+
+
+
+
+
